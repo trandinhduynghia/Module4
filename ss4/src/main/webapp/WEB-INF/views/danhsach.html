@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Danh sach bai hat</h3>
+<p>
+    <a th:href="@{/nhac/themmoi}">
+        the moi bai hat
+    </a>
+</p>
+<table id = "products">
+    <thead>
+    <tr>
+        <th>Ten bai hat</th>
+        <th>Nghe si the hien</th>
+        <th>The loai</th>
+        <th>Bai hat</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="nhac : ${nhacs}">
+        <td th:text="${nhac.tenbaihat}"></td>
+        <td th:text="${nhac.nghesithehien}"></td>
+        <td th:text="${nhac.theloai}"></td>
+        <td><audio width="100" height="100" th:src="@{'/image/' + ${nhac.duongdan}}" controls></audio></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
