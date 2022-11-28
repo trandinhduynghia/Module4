@@ -4,31 +4,35 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-
 <body>
-<h3>Add Product</h3>
+
+<h3>Them moi bai hat</h3>
 
 <p>
-    <a th:href="@{/product/list}">
-        Back to product list
+    <a th:href="@{/music/list}">
+        Quay ve danh sach bai hat
     </a>
 </p>
 
 <div id="form">
-    <form th:action="@{/product/save}" th:object="${productForm}"
+    <form th:action="@{/music/save}" th:object="${musicForm}"
           method="POST" novalidate="novalidate" enctype="multipart/form-data">
         <input type="hidden" th:field="*{id}"/>
         <div>
-            <label>Name</label>
-            <input type="text" th:field="*{name}"/>
+            <label>Ten bai hat</label>
+            <input type="text" th:field="*{tenbaihat}"/>
         </div>
         <div>
-            <label>Description</label>
-            <input type="text" th:field="*{description}"/>
+            <label>Nghe si the hien</label>
+            <input type="text" th:field="*{nghesithehien}"/>
         </div>
         <div>
-            <label>Image</label>
-            <input type="file" th:field="*{image}"/>
+            <label>The loai</label>
+            <input type="text" th:field="*{theloai}"/>
+        </div>
+        <div>
+            <label>Bai hat</label>
+            <input type="file" th:field="*{duongdan}"/>
         </div>
         <input type="submit" value="Save"/>
     </form>
