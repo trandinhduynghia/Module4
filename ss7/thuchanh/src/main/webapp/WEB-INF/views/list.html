@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer list</title>
+</head>
+<body>
+<a href="/create-customer">Create new customer</a>
+<!--/*@thymesVar id="message" type="codegym"*/-->
+<div th:if="${message}">
+    <span th:text="${message}"></span>
+</div>
+<table >
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Province</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="o : ${customers}">
+        <td th:text="${o.id}"></td>
+        <td th:text="${o.firstName}"></td>
+        <td th:text="${o.lastName}"></td>
+        <td th:text="${o.province.name}"></td>
+
+        <td><a th:href="@{/edit-customer/__${o.id}__}">Edit</a></td>
+
+        <td><a th:href="@{/delete-customer/__${o.id}__}">Delete</a></td>
+    </tr>
+
+    </tbody>
+</table>
+</body>
+</html>

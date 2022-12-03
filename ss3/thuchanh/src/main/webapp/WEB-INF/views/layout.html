@@ -7,8 +7,11 @@
     <title>Spring customer</title>
 
     <style type="text/css">
-        h3{background-color: blue; color: white; padding: 10px 0 10px 20px;}
+        h3{background-color: blue; color: white; padding: 10px 0 10px 20px; text-align: center}
         footer{margin: 10px 0;}
+        a{
+            text-decoration: none;
+        }
 
         #customers {
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -31,6 +34,9 @@
             text-align: left;
             background-color: #4CAF50;
             color: white;
+        }
+        #customers a{
+            text-decoration: none;
         }
 
         input[type=text],input[type=email]{
@@ -72,7 +78,7 @@
 </head>
 <body>
 
-<footer th:fragment="footer">
+<footer th:fragment="footer" style="text-align: center">
     &copy; 2021 CodeGym
 </footer>
 

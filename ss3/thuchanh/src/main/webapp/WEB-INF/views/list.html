@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Sản phẩm</title>
+</head>
+
+<body>
+<h3>Danh sách sản phẩm</h3>
+<p>
+    <a th:href="@{/product/create}">
+        Add new customer
+    </a>
+</p>
+
+<div class="notify">
+    <!--/*@thymesVar id="success" type="codegym"*/-->
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
+
+<table id = "customers">
+    <thead>
+    <tr>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Mô tả</th>
+        <th>Nhà sản xuất</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+        <th>Thông tin</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row, rowStat : ${productList}">
+        <td th:text="${row.getTensp()}"></td>
+        <td th:text="${row.getGia()}"></td>
+        <td th:text="${row.getMota()}"></td>
+        <td th:text="${row.getNsx()}"></td>
+        <td><a th:href="@{/product/__${row.getId()}__/edit}" style="background-color: blue; color: white">Sửa</a></td>
+        <td><a th:href="@{/product/{id}/delete(id=${row.getId()})}" style="background-color: darkred; color: white">Xóa</a></td>
+        <td><a th:href="@{/product/{id}/view(id=${row.getId()})}">Thông tin</a></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
