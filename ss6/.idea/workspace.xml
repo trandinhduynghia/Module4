@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2c6301e1-92dd-4b4a-b726-af4e5d62a239" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ss3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss3/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss3/.idea/ss3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss3/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss5/DemoORM/src/main/java/codegym/vn/bean/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss5/DemoORM/src/main/java/codegym/vn/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss5/DemoORM/src/main/java/codegym/vn/respository/BlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss5/DemoORM/src/main/java/codegym/vn/respository/IBlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss5/DemoORM/src/main/java/codegym/vn/service/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss5/DemoORM/src/main/java/codegym/vn/service/IBlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss5/DemoORM/src/main/webapp/WEB-INF/views/createblog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss5/DemoORM/src/main/webapp/WEB-INF/views/deleteblog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss5/DemoORM/src/main/webapp/WEB-INF/views/editblog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss5/DemoORM/src/main/webapp/WEB-INF/views/listblog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/java/com/codegym/demospringboot/bean/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/java/com/codegym/demospringboot/bean/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/java/com/codegym/demospringboot/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/java/com/codegym/demospringboot/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/java/com/codegym/demospringboot/repository/IBlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/java/com/codegym/demospringboot/repository/ICategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/java/com/codegym/demospringboot/service/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/java/com/codegym/demospringboot/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/java/com/codegym/demospringboot/service/IBlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/java/com/codegym/demospringboot/service/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/resources/templates/createcategory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/resources/templates/deletecategory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/resources/templates/editcategory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/resources/templates/listblog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/resources/templates/listcategory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoSpringBoot/src/main/resources/templates/trangchu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/bean/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/bean/Music.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/controller/MucsicController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/repository/ICategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/repository/IMusicRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/service/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/service/IMusicService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/service/MucsicService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/createmusic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/listcategory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/listmusic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5/DemoORM/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5/DemoORM/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5/DemoORM/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5/DemoORM/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5/DemoORM/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5/DemoORM/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5/DemoORM/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5/DemoORM/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5/DemoORM/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5/DemoORM/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5/DemoORM/build/libs/DemoORM-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5/DemoORM/build/libs/DemoORM-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss5/DemoORM/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5/DemoORM/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/config/AppConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/config/AppConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/controller/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/controller/ProvinceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/controller/ProvinceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/repository/ICustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/repository/ICustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/service/CustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/service/ICustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/build/classes/java/main/codegym/vn/service/ICustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/build/libs/thuchanh-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/build/libs/thuchanh-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/controller/ProvinceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/controller/ProvinceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/repository/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/java/codegym/vn/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/list1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7/thuchanh/src/main/webapp/WEB-INF/views/list1.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2IcGaxhsHTYyWpcKpj1DVYiortj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c6301e1-92dd-4b4a-b726-af4e5d62a239" name="Changes" comment="" />
+      <created>1670473531516</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670473531516</updated>
+      <workItem from="1670473533891" duration="289000" />
+      <workItem from="1670473860835" duration="82000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

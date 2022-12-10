@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List music</title>
+</head>
+<body>
+<a href="/create-music">Create music</a>
+<!--/*@thymesVar id="message" type="codegym"*/-->
+<div th:if="${message}">
+    <span th:text="${message}"></span>
+</div>
+<table >
+    <thead>
+    <tr>
+        <th>Name music</th>
+        <th>Singer</th>
+        <th>Category</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <th:block th:each="music : ${musics}">
+        <tr>
+            <td th:text="${music.name}"></td>
+            <td th:text="${music.singer}"></td>
+            <td th:text="${music.category}"></td>
+            <td><a th:href="@{/edit-music/__${music.id}__ }">Edit</a></td>
+        </tr>
+    </th:block>
+
+    </tbody>
+</table>
+</body>
+</html>

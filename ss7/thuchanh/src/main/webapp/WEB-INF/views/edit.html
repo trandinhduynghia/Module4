@@ -29,10 +29,8 @@
             <td>Province:</td>
             <td>
                 <select th:field="*{province}">
-                    <option th:each="p : ${provinces}"
-                            th:value="${p.id}"
-                            th:text="${p.name}"
-                            th:selected="(${customer.province}) and (${p.id} == *{province.id})"></option>
+                    <option th:each="p : ${provinces}" th:value="${p.id}" th:text="${p.name}"
+                            ></option>
                 </select>
             </td>
         </tr>
@@ -44,3 +42,5 @@
 </form>
 </body>
 </html>
+
+<!--th:selected="(${customer.province}) and (${p.id} == *{province.id})"-->

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List blog</title>
+</head>
+<body>
+<a href="/blog/create">Create new blog</a>
+<!--/*@thymesVar id="message" type="codegym"*/-->
+<div th:if="${message}">
+    <span th:text="${message}"></span>
+</div>
+<table >
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name blog</th>
+        <th>Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="o : ${blogList}">
+        <td th:text="${o.id}"></td>
+        <td th:text="${o.blogName}"></td>
+        <td th:text="${o.content}"></td>
+        <td><a th:href="@{/blog/edit/__${o.id}__}">Edit</a></td>
+        <td><a th:href="@{/blog/delete/__${o.id}__}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

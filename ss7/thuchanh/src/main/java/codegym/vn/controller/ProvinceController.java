@@ -1,6 +1,8 @@
 package codegym.vn.controller;
 
+import codegym.vn.bean.Customer;
 import codegym.vn.bean.Province;
+import codegym.vn.service.CustomerService;
 import codegym.vn.service.IProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,10 +12,30 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 public class ProvinceController {
     @Autowired
     private IProvinceService provinceService;
+
+    @Autowired
+    private CustomerService customerService;
+
+    @GetMapping("/view-province/{id}")
+    public ModelAndView viewProvince(@PathVariable("id") Long id){
+        Province provinceOptional = provinceService.findById(id);
+        if(provinceOptional == null){
+            return new ModelAndView("/error.404");
+        }
+
+        Iterable<Customer> customers = customerService.findAllByProvince(provinceOptional);
+
+        ModelAndView modelAndView = new ModelAndView("view");
+        modelAndView.addObject("province", provinceOptional);
+        modelAndView.addObject("customers", customers);
+        return modelAndView;
+    }
 
     @GetMapping("/provinces")
     public ModelAndView listProvinces() {
