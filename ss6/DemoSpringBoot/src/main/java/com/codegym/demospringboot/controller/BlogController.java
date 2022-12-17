@@ -36,7 +36,7 @@ public class BlogController {
         }
 
         Iterable<Blog> blogs = blogService.findAllByCategory(category);
-        ModelAndView modelAndView = new ModelAndView("listblog");
+        ModelAndView modelAndView = new ModelAndView("/listblog");
         modelAndView.addObject("blogs", blogs);
         return modelAndView;
     }
@@ -58,13 +58,17 @@ public class BlogController {
     }
 
     @GetMapping("/blog")
-    public ModelAndView listBlog(@RequestParam("search") Optional<String> search, Pageable pageable) {
+    public ModelAndView listBlog(@RequestParam("search") Optional<String> search,
+                                 @RequestParam("page") Optional<Integer> page,
+                                 @RequestParam("size") Optional<Integer> size) {
 //        Iterable<Customer> customers = customerService.findAll();
+        int currentPage = page.orElse(1);
+        int pageSize = size.orElse(10);
         Page<Blog> blogs;
         if (search.isPresent()){
-            blogs = blogService.findAllByNameBlogContaining(search.get(), pageable);
+            blogs = blogService.findAllByNameBlogContaining(search.get(), PageRequest.of(currentPage - 1, pageSize));
         } else {
-            blogs = blogService.findAll(pageable);
+            blogs = blogService.findAll(PageRequest.of(currentPage - 1, pageSize));
         }
         ModelAndView modelAndView = new ModelAndView("/listblog");
         modelAndView.addObject("blogs", blogs);

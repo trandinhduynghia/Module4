@@ -43,8 +43,8 @@
                                         <td th:text="*{className}"></td>
                                         <td th:text="*{email}"></td>
                                         <td th:text="*{phoneNumber}"></td>
-                                        <!--<td th:text="*{birthdate}"></td>-->
-                                        <td th:text="*{#dates.format(birthdate, 'yyyy-MM-dd')}"></td>
+                                        <td th:text="*{birthdate}"></td>
+<!--                                        <td th:text="*{#dates.format(birthdate, 'yyyy-MM-dd')}"></td>-->
                                         <td th:text="*{sex ? 'Nam' : 'Nữ'}"></td>
                                         <td>
                                             <a th:href="@{/student/view(id=*{id})}">View</a>

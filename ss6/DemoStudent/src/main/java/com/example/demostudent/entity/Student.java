@@ -21,13 +21,13 @@ public class Student {
     @Transient
     private String note;
 
-    //    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date birthdate;
+
+    private String birthdate;
 
     public Student() {
     }
 
-    public Student(String id, String name, ClassName className, String email, boolean sex, String phoneNumber, String note, Date birthdate) {
+    public Student(String id, String name, ClassName className, String email, boolean sex, String phoneNumber, String note, String birthdate) {
         this.id = id;
         this.name = name;
         this.className = className;
@@ -88,11 +88,11 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
-    public Date getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
 }

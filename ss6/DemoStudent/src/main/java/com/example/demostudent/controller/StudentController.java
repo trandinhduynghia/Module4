@@ -5,12 +5,18 @@ import com.example.demostudent.entity.Student;
 import com.example.demostudent.service.ClassNameService;
 import com.example.demostudent.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Controller
 @RequestMapping("/student")
@@ -29,7 +35,7 @@ public class StudentController {
     public String list(Model model) {
         List<Student> students = service.findAll();
         model.addAttribute("students", students);
-        return "/student/list";
+        return "student/list";
     }
 
 //    @GetMapping("/view/{student_id}")
@@ -106,24 +112,22 @@ public class StudentController {
 //        return "redirect:/student/list2";
 //    }
 
-//    @GetMapping(value = "/listpaging")
-//    public String listpaging(Model model, @RequestParam("page") Optional<Integer> page,
-//                             @RequestParam("size") Optional<Integer> size,
-//                             @RequestParam("sort") Optional<String> sort) {
-//        int currentPage = page.orElse(1);
-//        int pageSize = size.orElse(5);
-//        String sortField = sort.orElse("phoneNumber");
-//        Page<Student> students = service.findAllWithPaging(PageRequest.of(currentPage - 1, pageSize, Sort.by(sortField).ascending()));
-//        model.addAttribute("students", students);
-//        int totalPages = students.getTotalPages();
-//        if (totalPages > 1) {
-//            List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages)
-//                    .boxed()
-//                    .collect(Collectors.toList());
-//            model.addAttribute("pageNumbers", pageNumbers);
-//        }
-//        return "student/listPaging";
-//    }
+    @GetMapping(value = "/listpaging")
+    public String listpaging(Model model, @RequestParam("page") Optional<Integer> page,
+                             @RequestParam("size") Optional<Integer> size,
+                             @RequestParam("sort") Optional<String> sort) {
+        int currentPage = page.orElse(1);
+        int pageSize = size.orElse(2);
+        String sortField = sort.orElse("phoneNumber");
+        Page<Student> students = service.findAllWithPaging(PageRequest.of(currentPage - 1, pageSize, Sort.by(sortField).ascending()));
+        model.addAttribute("students", students);
+        int totalPages = students.getTotalPages();
+        if (totalPages > 1) {
+            List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages).boxed().collect(Collectors.toList());
+            model.addAttribute("pageNumbers", pageNumbers);
+        }
+        return "student/listPaging";
+    }
 
 //    @GetMapping(value = "/listpagingslice")
 //    public String listpagingslice(Model model, @RequestParam("page") Optional<Integer> page,

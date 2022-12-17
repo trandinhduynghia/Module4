@@ -10,61 +10,142 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/create-blog">Create blog</a>
+                </li>
+            </ul>
+        </div>
+
+        <form class="row g-3" action="/blog">
+            <div class="col-auto">
+                <input type="search" class="form-control"  placeholder="Name blog" name="search">
+            </div>
+
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Search</button>
+            </div>
+
         </form>
+
+
     </div>
+
+
 </nav>
-<a class="btn btn-primary" href="/create-blog" role="button">Create blog</a>
+<div style="text-align: center">
+    <h2>List blog</h2>
+</div>
 
-<div id="list-example" class="list-group">
-    <th:block th:each="c : ${category}">
-        <a class="list-group-item list-group-item-action" th:href="@{/blog-category/__${c.id}__ }" th:text="${c.name}" ></a>
 
-    </th:block>
 
+
+
+<div >
+
+    <div class="row">
+
+        <div class="col-lg-3">
+            <div id="list-example" class="list-group">
+                <th:block th:each="c : ${category}">
+                    <a class="list-group-item list-group-item-action" th:href="@{/blog-category/__${c.id}__ }" th:text="${c.name}" ></a>
+                </th:block>
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-9">
+            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name blog</th>
+                        <th scope="col">Content</th>
+                        <th scope="col">Category</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <th:block th:each="blog : ${blogs}">
+                        <tr>
+                            <td th:text="${blog.id}"></td>
+                            <td th:text="${blog.nameBlog}"></td>
+                            <td th:text="${blog.content}"></td>
+                            <td th:text="${blog.category.name}"></td>
+                            <td><a class="btn btn-primary" role="button" th:href="@{/edit-blog/__${blog.id}__ }">Edit</a></td>
+                            <td><a class="btn btn-primary" href="#" role="button" th:href="@{/delete-blog/__${blog.id}__ }" style="background: darkred; border: darkred solid 1px" >Delete</a></td>
+                        </tr>
+                    </th:block>
+
+                    </tbody>
+                </table>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" th:href="@{'/blog'(page=${blogs.number - 0})}" th:if="${blogs.hasPrevious()}">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="@{'/blog'(page=${blogs.number + 1})}" th:text="${blogs.number + 1}"></a></li>
+                        <li class="page-item"><a class="page-link" th:href="@{'/blog'(page=${blogs.number + 2})}" th:if="${blogs.hasNext()}" >Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+        </div>
+
+
+    </div>
 
 
 </div>
 
-<div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Name blog</th>
-            <th scope="col">Content</th>
-            <th scope="col">Category</th>
-        </tr>
-        </thead>
 
-        <tbody>
-        <th:block th:each="blog : ${blogs}">
-            <tr>
-                <td th:text="${blog.id}"></td>
-                <td th:text="${blog.nameBlog}"></td>
-                <td th:text="${blog.content}"></td>
-                <td th:text="${blog.category.name}"></td>
-                <td><a class="btn btn-primary" role="button" th:href="@{/edit-blog/__${blog.id}__ }">Edit</a></td>
-                <td><a class="btn btn-primary" href="#" role="button" th:href="@{/delete-blog/__${blog.id}__ }">Delete</a></td>
-            </tr>
-        </th:block>
 
-        </tbody>
-    </table>
-</div>
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">&copy; 2022</p>
+    </div>
+</footer>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <li class="page-item"><a class="page-link" th:href="@{'/blog'(page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#" th:text="${blogs.number + 1}"></a></li>
-        <li class="page-item"><a class="page-link" th:href="@{'/blog'(page=${blogs.number + 1})}" th:if="${blogs.hasNext()}" >Next</a></li>
-    </ul>
-</nav>
 </body>
 </html>
 <!--/<span th:text="${blogs.totalPages}"></span>-->
 <!--<li class="page-item"><a class="page-link" href="#">1</a></li>-->
+
+<!--<button type="button" onclick="info('${o.getMaPhongTro()}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
+<!-- Modal -->
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog">-->
+<!--        <form action="/PhongTro" method="get">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-header">-->
+<!--                    <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    <%&#45;&#45;                    chú ý action và value và name&#45;&#45;%>-->
+<!--                    <input name="action" value="delete" hidden>-->
+<!--                    <input name="MaPhongTro" id="MaPhongTro1" hidden>-->
+<!--                    <span class="text-danger">Bạn có muốn xóa mã phòng trọ  </span><span id="MaPhongTro"></span>-->
+<!--                </div>-->
+<!--                <div class="modal-footer">-->
+<!--                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>-->
+<!--                    <button type="submit" class="btn btn-primary">Xóa</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+
+<!--    </div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    function info(MaPhongTro) {-->
+<!--        document.getElementById("MaPhongTro1").value=MaPhongTro;-->
+<!--        document.getElementById("MaPhongTro").innerText=MaPhongTro;-->
+<!--    }-->
+<!--</script>-->

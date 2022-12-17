@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b3e0c7-d092-445c-82ec-95fc016ee372" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/vn/bean/Setting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/vn/config/AppConfiguaration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/vn/config/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/vn/controller/SettingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/vn/service/SettingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/vn/service/SettingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/ThucHanhSpringMVC/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1/ThucHanhSpringMVC/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/ThucHanhSpringMVC/src/main/java/codegym/vn/bean/ISettingService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/ThucHanhSpringMVC/src/main/java/codegym/vn/bean/Setting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/ThucHanhSpringMVC/src/main/java/codegym/vn/bean/SettingService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/ThucHanhSpringMVC/src/main/java/codegym/vn/controller/SettingController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/ThucHanhSpringMVC/src/main/webapp/WEB-INF/views/edit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1/ThucHanhSpringMVC/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss5/DemoORM/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5/DemoORM/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss6/DemoStudent/src/main/resources/templates/student/listPaging.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6/DemoSpringBoot/src/main/java/com/codegym/demospringboot/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6/DemoSpringBoot/src/main/java/com/codegym/demospringboot/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6/DemoSpringBoot/src/main/resources/templates/listblog.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6/DemoSpringBoot/src/main/resources/templates/listblog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6/DemoStudent/src/main/java/com/example/demostudent/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6/DemoStudent/src/main/java/com/example/demostudent/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6/DemoStudent/src/main/resources/templates/student/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6/DemoStudent/src/main/resources/templates/student/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -150,6 +141,7 @@
       <updated>1669605766758</updated>
       <workItem from="1669605770882" duration="4931000" />
       <workItem from="1669633511546" duration="3000" />
+      <workItem from="1670752779694" duration="215000" />
     </task>
     <servers />
   </component>
