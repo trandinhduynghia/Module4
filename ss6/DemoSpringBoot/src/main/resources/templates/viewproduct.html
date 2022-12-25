@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Product</title>
+</head>
+<body>
+<h1>View Product: <span th:text="${product.name}"></span></h1>
+<a href="/list">Product list</a>
+<th:block th:if="${message}">
+    <h3> <p th:text="${message}"></p></h3>
+</th:block>
+<form th:action="@{/cart/add/__${product.id}__}" method="get">
+    <table border="1">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Date publish</th>
+            <th scope="col">Product type</th>
+        </tr>
+        <tr>
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.datePublish}"></td>
+            <td th:text="${product.productType.name}"></td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="Add to cart">
+</form>
+<br>
+<a href="/cart">Go to cart</a>
+</body>
+</html>

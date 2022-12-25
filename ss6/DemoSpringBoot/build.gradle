@@ -21,6 +21,11 @@ dependencies {
 
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.30'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.12.3'
+
+
 }
 
 tasks.named('test') {

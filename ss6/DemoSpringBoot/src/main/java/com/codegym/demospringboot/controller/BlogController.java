@@ -14,7 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
 
-@Controller
+//@Controller
+@RestController
 public class BlogController {
     @Autowired
     private IBlogService blogService;

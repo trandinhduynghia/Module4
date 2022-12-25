@@ -15,6 +15,7 @@
 <div th:if="${message}">
     <span th:text="${message}"></span>
 </div>
+
 <form th:action="@{/create-blog}" th:object="${blog}" method="post" class="row g-3">
     <div class="col-12">
         <label  class="form-label">Name blog</label>

@@ -30,6 +30,7 @@
             <th scope="col">Price</th>
             <th scope="col">Date publish</th>
             <th scope="col">Product type</th>
+            <th scope="col">View</th>
 
         </tr>
         </thead>
@@ -42,6 +43,7 @@
                 <td th:text="${o.price}"></td>
                 <td th:text="${o.datePublish}"></td>
                 <td th:text="${o.productType.name}"></td>
+                <td><a th:href="@{/view-product/__${o.id}__ }">View</a></td>
 
             </tr>
         </th:block>

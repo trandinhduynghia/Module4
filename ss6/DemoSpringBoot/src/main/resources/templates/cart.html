@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+</head>
+<body>
+<h1>Cart</h1>
+<table border="1">
+    <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="product : ${cart.cart}">
+        <tr>
+            <td th:text="${product.key.name}"></td>
+            <td th:text="${product.key.price}"></td>
+            <td>
+                <a id="decrease_button" th:text="${'-'}"></a>
+                <span th:text="${product.value}"></span>
+                <a id="increase_button" th:href="@{/add/__${product.getKey().id}__(action='show')}"
+                   th:text="${'+'}"></a>
+            </td>
+            <td><a th:href="@{/cart/remove/__${product.key.id}__ }">Delete</a></td>
+        </tr>
+    </th:block>
+    <tr>
+        <td>Total</td>
+        <td th:text="${cart.countTotalPayment()}"></td>
+    </tr>
+
+</table>
+<a href="/list">Product list</a>
+</body>
+</html>

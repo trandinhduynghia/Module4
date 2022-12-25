@@ -1,9 +1,6 @@
 package com.codegym.demospringboot.controller;
 
-import com.codegym.demospringboot.bean.Blog;
-import com.codegym.demospringboot.bean.Category;
-import com.codegym.demospringboot.bean.Product;
-import com.codegym.demospringboot.bean.ProductType;
+import com.codegym.demospringboot.bean.*;
 import com.codegym.demospringboot.service.IProductService;
 import com.codegym.demospringboot.service.IProductTypeService;
 import com.codegym.demospringboot.validate.Validate;
@@ -14,10 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -28,6 +22,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Controller
+@SessionAttributes("cart")
 public class ProductController {
     @Autowired
     IProductService productService;
@@ -35,8 +30,10 @@ public class ProductController {
     IProductTypeService productTypeService;
     @Autowired
     Validate validateProduct;
-
-
+    @ModelAttribute("cart")
+    public Cart setUpUserForm(){
+        return new Cart();
+    }
 
     @GetMapping("list")
     public String displayAll(Model model){
@@ -80,5 +77,41 @@ public class ProductController {
         }
         productService.addProduct(product);
         return "redirect:/list";
+    }
+    @GetMapping("/view-product/{id}")
+    public ModelAndView viewProduct(@PathVariable("id") Integer id){
+        System.out.println(productService.findById(id).getId());
+        return new ModelAndView("viewproduct","product",productService.findById(id));
+    }
+    @PostMapping("/view-product/{id}")
+    public ModelAndView addViewProduct(@PathVariable("id") Integer id,@ModelAttribute("cart") Cart cart){
+        Product product=productService.findById(id);
+        ModelAndView modelAndView=new ModelAndView("redirect:/cart");
+        modelAndView.addObject("product",product);
+        if (product==null){
+            modelAndView.addObject("message","Error");
+        }else{
+            cart.addToCart(product);
+            modelAndView.addObject("message","Add "+product.getName()+" to cart successfully\nAmount: "+cart.getAmount(product));
+        }
+        System.out.println("test");
+        System.out.println(cart.getCart().toString());
+        return modelAndView;
+    }
+    @GetMapping("/cart")
+    public String cart(@ModelAttribute("cart") Cart cart, Model model){
+        model.addAttribute("cart", cart);
+        return "cart";
+    }
+    @GetMapping("/cart/add/{id}")
+    public ModelAndView goToCart(@ModelAttribute("cart") Cart cart, @PathVariable Integer id){
+        Product product = productService.findById(id);
+        cart.addToCart(product);
+        return new ModelAndView("cart","cart",cart);
+    }
+    @GetMapping("/cart/remove/{id}")
+    public ModelAndView removeProduct(@ModelAttribute("cart") Cart cart, @PathVariable Integer id){
+        cart.removeProduct(productService.findById(id));
+        return new ModelAndView("cart");
     }
 }

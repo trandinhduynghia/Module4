@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService implements IProductService{
@@ -35,7 +36,7 @@ public class ProductService implements IProductService{
 
     @Override
     public Product findById(Integer id) {
-        return productRepository.findById(id).orElse(null);
+        return productRepository.findById(id).orElse(new Product());
     }
 
     @Override
