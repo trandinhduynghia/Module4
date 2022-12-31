@@ -42,7 +42,7 @@
     <div class="col-md-8">
         <h2 class="form-group">Rent Book</h2>
 
-        <form method="post" th:action="@{/rentBook/__${random}__/__${book.id}__}" th:object="${book}">
+        <form method="post" th:action="@{/rentBook/__${random}__}" th:object="${book}">
             <fieldset class="scheduler-border">
                 <legend class="scheduler-border">Thông tin của book</legend>
                 <div class="row">

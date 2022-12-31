@@ -86,13 +86,16 @@
                     </tbody>
                 </table>
 
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" th:href="@{'/blog'(page=${blogs.number - 0})}" th:if="${blogs.hasPrevious()}">Previous</a></li>
-                        <li class="page-item"><a class="page-link" th:href="@{'/blog'(page=${blogs.number + 1})}" th:text="${blogs.number + 1}"></a></li>
-                        <li class="page-item"><a class="page-link" th:href="@{'/blog'(page=${blogs.number + 2})}" th:if="${blogs.hasNext()}" >Next</a></li>
-                    </ul>
-                </nav>
+                    <nav aria-label="Page navigation example" th:if="${blogs.totalPages > 0}">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" th:href="@{'/blog'(page=${blogs.number - 0})}" th:if="${blogs.hasPrevious()}">Previous</a></li>
+                            <li class="page-item"><a class="page-link" th:href="@{'/blog'(page=${blogs.number + 1})}" th:text="${blogs.number + 1}"></a></li>
+                            <li class="page-item"><a class="page-link" th:href="@{'/blog'(page=${blogs.number + 2})}" th:if="${blogs.hasNext()}" >Next</a></li>
+                        </ul>
+                    </nav>
+
+
+
             </div>
 
 

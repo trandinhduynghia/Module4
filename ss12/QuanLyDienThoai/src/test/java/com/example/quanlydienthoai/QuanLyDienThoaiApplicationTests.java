@@ -1,10 +1,10 @@
-package com.example.validateform;
+package com.example.quanlydienthoai;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ValidateFormApplicationTests {
+class QuanLyDienThoaiApplicationTests {
 
     @Test
     void contextLoads() {

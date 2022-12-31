@@ -13,17 +13,18 @@
         <th>Quantity</th>
         <th>Delete</th>
     </tr>
-    <th:block th:each="product : ${cart.cart}">
+    <th:block th:each="product : ${cart.cart.keySet()}">
         <tr>
-            <td th:text="${product.key.name}"></td>
-            <td th:text="${product.key.price}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
             <td>
                 <a id="decrease_button" th:text="${'-'}"></a>
-                <span th:text="${product.value}"></span>
-                <a id="increase_button" th:href="@{/add/__${product.getKey().id}__(action='show')}"
-                   th:text="${'+'}"></a>
+                <span th:text="${cart.getAmount(product)}"></span>
+                <a th:href="@{/cart/add/__${product.id}__}" th:text="${'+'}"></a>
             </td>
-            <td><a th:href="@{/cart/remove/__${product.key.id}__ }">Delete</a></td>
+            <td>
+                <a th:href="@{/cart/remove/__${product.id}__ }"> Delete</a>
+            </td>
         </tr>
     </th:block>
     <tr>

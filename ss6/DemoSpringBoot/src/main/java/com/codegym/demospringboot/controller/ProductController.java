@@ -111,7 +111,8 @@ public class ProductController {
     }
     @GetMapping("/cart/remove/{id}")
     public ModelAndView removeProduct(@ModelAttribute("cart") Cart cart, @PathVariable Integer id){
-        cart.removeProduct(productService.findById(id));
-        return new ModelAndView("cart");
+        Product product = productService.findById(id);
+        cart.removeProduct(product);
+        return new ModelAndView("redirect:/cart");
     }
 }

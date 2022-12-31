@@ -1,13 +1,13 @@
-package com.example.validateform;
+package com.example.quanlydienthoai;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ValidateFormApplication {
+public class QuanLyDienThoaiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ValidateFormApplication.class, args);
+        SpringApplication.run(QuanLyDienThoaiApplication.class, args);
     }
 
 }

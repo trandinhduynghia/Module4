@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List blog jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function searchByName() {
+            const name = $("#name").val();
+            alert(name);
+            $.ajax({
+                'contentType': 'application/json',
+                'url': "/searchByName",
+                'type': "GET",
+                'data': {"name": name},
+                'success': function (data) {
+                    alert(JSON.stringify(data));
+                    var result =
+                        `<tr>
+                        <th>Name blog</th>
+                        <th>Content</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>`;
+                    for (var i = 0; i < data.length; i++) {
+                        result +=
+                            `<tr>
+                            <td>${data[i].nameBlog}</td>
+                            <td>${data[i].content}</td>
+                            <td><a th:href="/edit-blog/${data[i].id}">Edit</a></td>
+                            <td><a th:href="/delete-blog/${data[i].id}">Delete</a></td>
+                        </tr>`
+                    }
+                    $("#result").html(result);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<h1>Danh sach Blog</h1>
+<!--<form>-->
+Search by tieu de:
+<input name="nameSearch" type="text" id="name"/>
+<button onclick="searchByName();">Search</button>
+<!--</form>-->
+<br/>
+<br/>
+<table border="1" id="result">
+    <tr>
+        <th>Name blog</th>
+        <th>Content</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="blog:${blogs}">
+        <tr>
+            <td>
+                <a th:href="@{/category-blog/{id}(id=${blog.category.id})}" th:text="${blog.category.name}"></a>
+            </td>
+            <td th:text="${blog.nameBlog}"></td>
+            <td><p class="an" th:text="${blog.content}"></p></td>
+            <td><a th:href="@{/edit-blog/{id}(id=${blog.id})}">Edit</a></td>
+            <td><a th:href="@{/delete-blog/{id}(id=${blog.id})}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

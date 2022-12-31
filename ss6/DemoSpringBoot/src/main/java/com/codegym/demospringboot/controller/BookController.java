@@ -40,9 +40,9 @@ public class BookController {
         return modelAndView;
     }
 
-    @PostMapping("/rentBook/{random}/{id}")
-    public ModelAndView rentBook(@ModelAttribute Book book, @PathVariable int random, @PathVariable int id) throws RentBookException {
-            bookService.increaseBookQuantity(id);
+    @PostMapping("/rentBook/{random}")
+    public ModelAndView rentBook(@ModelAttribute("book") Book book, @PathVariable int random){
+            bookService.decreaseBookQuantity(book.getId());
             bookMap.put(random, book);
             return new ModelAndView("listbook","books",bookService.showAll());
     }
@@ -57,7 +57,7 @@ public class BookController {
         System.out.println(random);
         if(bookMap.containsKey(random)) {
             Book book= bookMap.get(random);
-            bookService.decreaseBookQuantity(book.getId());
+            bookService.increaseBookQuantity(book.getId());
             bookMap.remove(random);
             return new ModelAndView("listBook","books",bookService.showAll());
         }

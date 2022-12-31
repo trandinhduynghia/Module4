@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -61,13 +62,15 @@ public class BlogController {
     @GetMapping("/blog")
     public ModelAndView listBlog(@RequestParam("search") Optional<String> search,
                                  @RequestParam("page") Optional<Integer> page,
-                                 @RequestParam("size") Optional<Integer> size) {
+                                 @RequestParam("size") Optional<Integer> size,
+                                 @RequestParam("sort") Optional<String> sort) {
 //        Iterable<Customer> customers = customerService.findAll();
         int currentPage = page.orElse(1);
         int pageSize = size.orElse(10);
+        String sortField = sort.orElse("nameBlog");
         Page<Blog> blogs;
         if (search.isPresent()){
-            blogs = blogService.findAllByNameBlogContaining(search.get(), PageRequest.of(currentPage - 1, pageSize));
+            blogs = blogService.findAllByNameBlogContaining(search.get(), PageRequest.of(currentPage - 1, pageSize, Sort.by(sortField).ascending()));
         } else {
             blogs = blogService.findAll(PageRequest.of(currentPage - 1, pageSize));
         }
@@ -115,6 +118,6 @@ public class BlogController {
     @PostMapping("/delete-blog")
     public String deleteBlog(@ModelAttribute("blog") Blog blog) {
         blogService.remove(blog.getId());
-        return "redirect:blog";
+        return "redirect:/blog";
     }
 }
