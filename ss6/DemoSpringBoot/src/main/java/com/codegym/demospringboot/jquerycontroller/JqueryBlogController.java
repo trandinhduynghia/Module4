@@ -17,13 +17,13 @@ public class JqueryBlogController {
     @Autowired
     private IBlogService blogService;
 
-    @GetMapping("/")
-    public ModelAndView listBlog(Pageable pageable) {
-        Page<Blog> blogs = blogService.findAll(pageable);
-        ModelAndView modelAndView = new ModelAndView("/listblogjquery");
-        modelAndView.addObject("blogs", blogs);
-        return modelAndView;
-    }
+//    @GetMapping("/")
+//    public ModelAndView listBlog(Pageable pageable) {
+//        Page<Blog> blogs = blogService.findAll(pageable);
+//        ModelAndView modelAndView = new ModelAndView("/listblogjquery");
+//        modelAndView.addObject("blogs", blogs);
+//        return modelAndView;
+//}
 
     @RequestMapping(value = "/searchByName",
             method = RequestMethod.GET,

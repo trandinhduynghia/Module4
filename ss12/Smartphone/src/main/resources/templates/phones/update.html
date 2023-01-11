@@ -5,7 +5,7 @@
     <title>Update</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">
-        function addNewSmartPhone() {
+        function editSmartPhone() {
             //lay du lieu
             let producer = $('#producer').val();
             let model = $('#model').val();
@@ -24,7 +24,7 @@
                 type: "POST",
                 data: JSON.stringify(newSmartphone),
                 //tên API
-                url: "/smartphones",
+                url: "/edit/__${smartphone.id}__",
                 //xử lý khi thành công
                 success: successHandler
 
@@ -39,19 +39,19 @@
     <table>
         <tr>
             <td>Producer:</td>
-            <td><input type="text"  placeholder="producer" th:field="*{producer}"></td>
+            <td><input type="text" id="producer"  placeholder="producer" th:field="*{producer}"></td>
         </tr>
         <tr>
             <td>Model:</td>
-            <td><input type="text"  placeholder="model" th:field="*{model}"></td>
+            <td><input type="text" id="model"   placeholder="model" th:field="*{model}"></td>
         </tr>
         <tr>
             <td>Price:</td>
-            <td><input type="text"  placeholder="price" th:field="*{price}"></td>
+            <td><input type="text" id="price" placeholder="price" th:field="*{price}"></td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="Update"></td>
+            <td><input type="submit" value="Update" onclick="addNewSmartPhone()"></td>
         </tr>
     </table>
 </form>

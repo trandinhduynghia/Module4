@@ -17,13 +17,13 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
-    @GetMapping("/user")
-    public ModelAndView listUser() {
-        Iterable<User> users = userService.findAll();
-        ModelAndView modelAndView = new ModelAndView("listuser");
-        modelAndView.addObject("users", users);
-        return modelAndView;
-    }
+//    @GetMapping("/user")
+//    public ModelAndView listUser() {
+//        Iterable<User> users = userService.findAll();
+//        ModelAndView modelAndView = new ModelAndView("listuser");
+//        modelAndView.addObject("users", users);
+//        return modelAndView;
+//    }
 
     @GetMapping("/create-user")
     public ModelAndView showCreateForm() {
