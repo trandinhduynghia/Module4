@@ -32,19 +32,19 @@ public class CustomerController {
 //        return "list";
 //    }
 
-    @GetMapping("/list-customer")
-    public String listCustomer(@RequestParam("name") Optional<String> name,
-                               @RequestParam("address") Optional<String> address,
-                               @RequestParam("customerType") Optional<String> customerType,
-                               @PageableDefault(value = 3) Pageable pageable,
-                               Model model) {
-        Page<Customer> list;
-        String condition = "";
-        if (name.isPresent() || address.isPresent() || customerType.isPresent()){
-            list = customerService.searchCustomer(name.get(), address.get(), customerType.get(), pageable);
-        }else {
-            list = customerService.findAll(pageable);
-        }
+//    @GetMapping("/list-customer")
+//    public String listCustomer(@RequestParam("name") Optional<String> name,
+//                               @RequestParam("address") Optional<String> address,
+//                               @RequestParam("customerType") Optional<String> customerType,
+//                               @PageableDefault(value = 3) Pageable pageable,
+//                               Model model) {
+//        Page<Customer> list;
+//        String condition = "";
+//        if(name.isPresent() || address.isPresent() || customerType.isPresent()){
+//            list = customerService.searchCustomer(name.get(), address.get(), customerType.get(), pageable);
+////            list = customerService.findAllByNameAndAddressAndCustomerTypeContaining(name.get(), address.get(), customerType.get(), pageable);
+//            model.addAttribute("list", list);
+//        }
 //        if(name.isPresent()){
 //            condition += "&name=" + name.get();
 //            model.addAttribute("name", name.get());
@@ -56,9 +56,22 @@ public class CustomerController {
 //        if (customerType.isPresent()) {
 //            condition += "&customerType=" + customerType.get();
 //            model.addAttribute("customerType", customerType.get());
+//        }else {
+//            list = customerService.findAll(pageable);
+//            model.addAttribute("list", list);
 //        }
-        model.addAttribute("list", list);
-        model.addAttribute("condition", condition);
+//        model.addAttribute("condition", condition);
+//        return "list";
+//    }
+
+    @GetMapping("/list-customer")
+    public String listCustomer(@RequestParam(value = "name",required = false,defaultValue = "") String name,
+                               @RequestParam(value = "address", required = false,defaultValue = "") String address,
+                               @RequestParam(value = "customerType", required = false,defaultValue = "") String customerType,
+                               @PageableDefault(value = 3) Pageable pageable,
+                               Model model) {
+      Page<Customer> list = customerService.searchCustomer(pageable, name,address,customerType);
+      model.addAttribute("list", list);
         return "list";
     }
 
