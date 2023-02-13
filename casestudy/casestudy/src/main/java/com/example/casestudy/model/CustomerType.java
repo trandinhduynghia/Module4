@@ -36,4 +36,6 @@ public class CustomerType {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

@@ -110,17 +110,15 @@
 
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
-                            <li class="page-item"><a class="page-link" th:href="@{'/list-customer'(page=${list.number - 1})} + ${condition}" th:if="${list.hasPrevious()}">Previous</a></li>
-<!--                            <li class="page-item"><a class="page-link" th:href="@{'/list-customer'(page=${list.number})}" th:text="${list.number + 1}"></a></li>-->
-                            <li class="page-item" th:each="i:${#numbers.sequence(0, list.totalPages - 1)}"
-                                th:class="'page-item ' + (${i==list.number} ? 'active')" aria-current="page">
-                                <a class="page-link" th:href="@{/list-customer'(page=${i})} + ${condition}" th:text="${i + 1}"></a>
-                            </li>
-                            <li class="page-item"><a class="page-link" th:href="@{'/list-customer'(page=${list.number + 1})} + ${condition}" th:if="${list.hasNext()}" >Next</a></li>
+                            <li class="page-item"><a class="page-link" th:href="@{'/list-customer'(page=${list.number - 1}, name=${name},address=${address},customerType=${customerType})}" th:if="${list.hasPrevious()}">Previous</a></li>
+                            <li class="page-item"><a class="page-link" th:href="@{'/list-customer'(page=${list.number}, name=${name},address=${address},customerType=${customerType})}" th:text="${list.number + 1}"></a></li>
+<!--                            <li class="page-item" th:each="i:${#numbers.sequence(0, list.totalPages - 1)}"-->
+<!--                                th:class="'page-item ' + (${i==list.number} ? 'active')" aria-current="page">-->
+<!--                                <a class="page-link" th:href="@{'/list-customer'(page=${i},name=${name},address=${address},customerType=${customerType})}" th:text="${i + 1}"></a>-->
+<!--                            </li>-->
+                            <li class="page-item"><a class="page-link" th:href="@{'/list-customer'(page=${list.number + 1},name=${name},address=${address},customerType=${customerType})}" th:if="${list.hasNext()}" >Next</a></li>
                         </ul>
                     </nav>
-
-
 
             </div>
 

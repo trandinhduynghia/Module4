@@ -26,7 +26,6 @@ public class Customer {
     @NotNull(message = "Birthday cannot be blank")
     private Date birthday;
     @NotNull(message = "Gender cannot be blank")
-    @Column(nullable = false)
     private boolean gender;
     @NotEmpty(message = "Card cannot be blank")
     @Pattern(regexp = "(^$|[0-9]{12})", message = "Số CMND không hợp lệ")

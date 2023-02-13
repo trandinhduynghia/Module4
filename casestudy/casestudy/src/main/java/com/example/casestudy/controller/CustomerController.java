@@ -70,9 +70,12 @@ public class CustomerController {
                                @RequestParam(value = "customerType", required = false,defaultValue = "") String customerType,
                                @PageableDefault(value = 3) Pageable pageable,
                                Model model) {
-      Page<Customer> list = customerService.searchCustomer(pageable, name,address,customerType);
+      Page<Customer> list = customerService.searchCustomer(name,address,customerType,pageable);
       model.addAttribute("list", list);
-        return "list";
+      model.addAttribute("name",name);
+        model.addAttribute("address",address);
+        model.addAttribute("customerType",customerType);
+      return "list";
     }
 
 
